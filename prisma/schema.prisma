@@ -20,8 +20,6 @@ model User {
   updatedAt     DateTime  @default(now()) @map(name: "updated_at")
   role          Role      @default(FREE)
   tasks         Task[]
-  accounts      Account[]
-  sessions      Session[]
 }
 
 enum Role {
@@ -36,7 +34,6 @@ model Task {
   title         String
   description   String
   User          User?      @relation(fields: [userId], references: [id])
-  userID        String?
+  userId        String?
   status        String?
-
 }
