@@ -27,14 +27,14 @@ export const User = objectType({
 export const UsersQuery = extendType({
   type: 'Query',
   definition(t) {
-    //Gets all users
+    // get all users
     t.nonNull.list.field('users', {
       type: 'User',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.user.findMany()
       },
     });
-    //Gets users by email
+    // get user by email
     t.field('user', {
       type: 'User',
       args: {

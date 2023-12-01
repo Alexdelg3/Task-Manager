@@ -28,14 +28,14 @@ export const Task = objectType({
 export const TasksQuery = extendType({
   type: 'Query',
   definition(t) {
-    //Gets all tasks
+    // get all tasks
     t.nonNull.list.field('tasks', {
       type: 'Task',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.task.findMany()
       },
     });
-    //Gets task by userId
+    // get task by user id
     t.field('task', {
       type: 'Task',
       args: {
@@ -55,7 +55,7 @@ export const TasksQuery = extendType({
 export const TaskMutation = extendType({
   type: 'Mutation',
   definition(t) {
-    //Creates a new task
+    // create a new task
     t.nonNull.field('createTask', {
      type: 'Task',
      args: {
@@ -77,7 +77,7 @@ export const TaskMutation = extendType({
        })
      },
    });
-     //Update a task by id
+     // update a task by id
      t.field('updateTask', {
       type: 'Task',
       args: {
@@ -99,7 +99,7 @@ export const TaskMutation = extendType({
         });
       },
     });
-    //Delete a task by id
+    // delete a task by id
     t.field('deleteTask', {
       type: 'Task',
       args: {
