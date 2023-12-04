@@ -1,4 +1,4 @@
-## Jira Asana Clone
+## Task Manager Web Application
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). And:
  - Apollo Server as the GraphQL server
